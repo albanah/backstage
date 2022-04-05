@@ -467,3 +467,21 @@ gocd:
 
 airbrake:
   apiKey: ${AIRBRAKE_API_KEY}
+
+apiDocs:
+  asyncApi:
+    parserConfig:
+      expand:
+        channels:
+          root: true
+        servers:
+          root: true
+        messages:
+          root: true
+          elements: true
+    fetcherConfig:
+      order: 199
+      canReadValue: "^https?:\/\/[^\\s$.?#].[^\\s]*$"
+      fetchOptions:
+        headers:
+          EXAMPLE: my-value
